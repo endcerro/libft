@@ -60,6 +60,20 @@ static char	*cpy(char *str, char sep)
 	return (out);
 }
 
+char		**clearsplit(char **in, int cpt)
+{
+	int i;
+
+	i = 0;
+	while (i < cpt)
+	{
+		free(in[i]);
+		in[i] = 0;
+		i++;
+	}
+	return (in);
+}
+
 char		**ft_split(char const *str, char sep)
 {
 	char	**out;
@@ -81,6 +95,8 @@ char		**ft_split(char const *str, char sep)
 		while (*tmp == sep)
 			tmp++;
 		out[cpt++] = cpy(tmp, sep);
+		if (out[cpt - 1] == 0)
+			return (clearsplit(out, cpt - 1));
 		tmp += ft_strlen(out[cpt - 1]);
 	}
 	out[cpt] = 0;

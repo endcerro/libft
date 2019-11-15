@@ -27,7 +27,7 @@ static void	freelst(t_list *first, void (*del)(void *))
 	}
 }
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list *first;
 	t_list *current;

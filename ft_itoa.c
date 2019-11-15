@@ -27,7 +27,7 @@ static int		getlen(int n)
 	return (i);
 }
 
-int		ft_pow(int nb, int pow)
+int				ft_pow(int nb, int pow)
 {
 	int i;
 	int dest;
@@ -42,7 +42,7 @@ int		ft_pow(int nb, int pow)
 	return (dest);
 }
 
-char	*ft_itoa(int n)
+char			*ft_itoa(int n)
 {
 	char	*out;
 	int		len;
