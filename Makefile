@@ -1,8 +1,20 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: edal--ce <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/11/19 16:51:20 by edal--ce          #+#    #+#              #
+#    Updated: 2019/11/19 16:51:25 by edal--ce         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 
 CFLAGS = -Wall -Wextra -Werror 
 
 NAME = libft.a
-
+	
 SRCS = ft_split.c ft_putnbr_fd.c ft_putendl_fd.c ft_putstr_fd.c \
 ft_putchar_fd.c ft_substr.c ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c \
 ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memccpy.c ft_memchr.c \
@@ -28,11 +40,11 @@ all : $(NAME)
 .c.o:
 	${CC} ${CFLAGS} -I ./ -c $< -o ${<:.c=.o}
 
-bonus: ${BNSOBJ} ${OBJS}
-	ar rcs $(NAME) ${OBJS} ${BNSOBJ}
+bonus: ${BNSOBJ} ${OBJS} ${HEADER}
+	ar rcs $(NAME) ${OBJS} ${BNSOBJ} ${HEADER}	
 
-$(NAME): ${OBJS}
-	ar rcs $(NAME) ${OBJS} 
+$(NAME): ${OBJS} ${HEADER}
+	ar rcs $(NAME) ${OBJS} ${HEADER}
 
 fclean : clean
 	rm -rf  ./$(NAME)
