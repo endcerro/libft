@@ -16,18 +16,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*out;
 	char	*cp;
+	int		sz;
 
-	if (!s1 || !s2)
-		return (NULL);
-	if (!(out = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1))))
-		return (NULL);
+	sz = 1;
+	if (s1)
+		sz += ft_strlen(s1);
+	if (s2)
+		sz += ft_strlen(s2);
+	if (!s1 && !s2)
+		return (0);
+	if (!(out = malloc(sizeof(char) * sz)))
+		return (0);
 	cp = out;
-	s1--;
-	while (*(++s1))
-		*(out++) = *s1;
-	s2--;
-	while (*(++s2))
-		*(out++) = *s2;
+	if (s1--)
+		while (*(++s1))
+			*(out++) = *s1;
+	if (s2--)
+		while (*(++s2))
+			*(out++) = *s2;
 	*out = 0;
 	return (cp);
 }

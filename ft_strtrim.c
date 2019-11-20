@@ -55,7 +55,7 @@ char			*ft_strtrim(char const *s1, char const *set)
 	int		end;
 	int		i;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (0);
 	i = 0;
 	end = getfinalsize(s1, set, &start);
