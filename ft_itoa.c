@@ -33,12 +33,9 @@ int				ft_pow(int nb, int pow)
 	int dest;
 
 	dest = 1;
-	i = 1;
-	while (i < pow)
-	{
+	i = 0;
+	while (++i < pow)
 		dest = dest * nb;
-		i++;
-	}
 	return (dest);
 }
 
@@ -64,7 +61,7 @@ char			*ft_itoa(int n)
 	}
 	while (++i < len)
 	{
-		out[indxo++] = (n / ft_pow(10, len - i) * -neg) + 48;
+		out[indxo++] = (n / ft_pow(10, len - i) * -neg) + '0';
 		n -= n / ft_pow(10, len - i) * ft_pow(10, len - i);
 	}
 	out[indxo] = 0;

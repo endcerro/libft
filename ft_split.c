@@ -21,8 +21,6 @@ static int	countwords(char const *str, char sep)
 	reading = 0;
 	i = 0;
 	cpt = 0;
-	while (str[i] == sep)
-		i++;
 	while (str[i])
 	{
 		if (str[i] == sep)
@@ -49,7 +47,7 @@ static char	*cpy(char *str, char sep)
 	while (str[i] != sep && str[i])
 		i++;
 	if (!(out = malloc(sizeof(char) * (i + 1))))
-		return (NULL);
+		return (0);
 	i = 0;
 	while (str[i] != sep && str[i])
 	{
@@ -71,7 +69,8 @@ static char	**clearsplit(char **in, int cpt)
 		in[i] = 0;
 		i++;
 	}
-	return (in);
+	free(in);
+	return (0);
 }
 
 char		**ft_split(char const *str, char sep)
@@ -81,18 +80,18 @@ char		**ft_split(char const *str, char sep)
 	int		nbout;
 	char	*tmp;
 
+	if (!str)
+		return (0);
 	tmp = (char *)str;
 	cpt = 0;
-	if (str == 0)
-		return (0);
 	nbout = countwords(str, sep);
 	if (!(out = malloc(sizeof(char *) * (nbout + 1))))
 		return (0);
-	while (*tmp == sep)
+	while (*tmp == sep && *tmp)
 		tmp++;
-	while (cpt < nbout)
+	while (cpt < nbout && *tmp)
 	{
-		while (*tmp == sep)
+		while (*tmp == sep && *tmp)
 			tmp++;
 		out[cpt++] = cpy(tmp, sep);
 		if (out[cpt - 1] == 0)

@@ -17,8 +17,6 @@ static int		isincharset(char c, char const *set)
 	int i;
 
 	i = 0;
-	if (!set)
-		return (0);
 	while (set[i])
 		if (c == set[i++])
 			return (1);
@@ -34,7 +32,7 @@ static int		getfinalsize(char const *s1, char const *set, int *start)
 	end = -1;
 	cpt = 0;
 	i = 0;
-	while (isincharset(s1[i], set))
+	while (s1[i] && isincharset(s1[i], set))
 		i++;
 	*start = i;
 	while (s1[i])
@@ -53,18 +51,18 @@ char			*ft_strtrim(char const *s1, char const *set)
 	char	*out;
 	int		start;
 	int		end;
-	int		i;
+	char 	*cp;
 
 	if (!s1 || !set)
 		return (0);
-	i = 0;
 	end = getfinalsize(s1, set, &start);
 	if (end == -1)
 		end = ft_strlen(s1);
 	if (!(out = malloc(sizeof(char) * (end - start + 1))))
 		return (0);
+	cp = out;
 	while (start < end)
-		out[i++] = s1[start++];
-	out[i] = 0;
-	return (out);
+		*(out++) = s1[start++];
+	*out = 0;
+	return (cp);
 }
