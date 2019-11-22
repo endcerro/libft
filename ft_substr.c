@@ -17,14 +17,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*out;
 	char	*cp;
 	size_t	i;
-	size_t	size;
 
-	size = start + len;
 	i = 0;
 	out = 0;
 	if (!s)
 		return (0);
-	if (ft_strlen(s) < start)
+	if (ft_strlen(s) < start || len == 0)
 		return (ft_strdup(""));
 	if (!(out = malloc(sizeof(char) * (len + 1))))
 		return (0);
