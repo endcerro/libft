@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: edal--ce <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:43:55 by edal--ce          #+#    #+#             */
-/*   Updated: 2019/11/07 15:43:56 by edal--ce         ###   ########.fr       */
+/*   Updated: 2019/12/28 08:18:36 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void				ft_putnbr_fd(int n, int fd);
 void				ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *str, char sep);
 char				*ft_strchr(const char *str, int c);
-char				*ft_strdup(const char *s1);
+char				*ft_strdup(char *s1);
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
@@ -67,5 +67,12 @@ char				*ft_strtrim(char const *s1, char const *set);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
-
+char				*ft_convert_base(char *nbr, char *base_from, char *base_to);
+unsigned long		ft_atoi_base(char *nb, char *base);
+unsigned long		clean(char *nb, char *base, char *dest);
+unsigned long		ft_base_is_valid(char *base);
+int					mchb_strl(char nb, char *base);
+void				ft_addto(char *st, unsigned long *nb, char c);
+int					ft_abs(int val);
+unsigned char		*ft_itoua(int n);
 #endif
