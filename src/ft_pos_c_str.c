@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_pos_c_str.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 21:19:21 by edal--ce          #+#    #+#             */
-/*   Updated: 2020/02/26 02:06:14 by edal--ce         ###   ########.fr       */
+/*   Created: 2020/02/26 02:08:47 by edal--ce          #+#    #+#             */
+/*   Updated: 2020/02/26 02:09:23 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_abs(int val)
+int	ft_pos_c_str(char *str, char c)
 {
-	if (val < 0)
-		val *= -1;
-	return (val);
-}
+	int i;
 
-double	ft_abs_double(double val)
-{
-	if (val < 0)
-		val *= -1;
-	return (val);
+	i = -1;
+	while (str[++i])
+		if (str[i] == c)
+			return (i);
+	return (-1);
 }

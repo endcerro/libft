@@ -6,12 +6,12 @@
 #    By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/19 16:51:20 by edal--ce          #+#    #+#              #
-#    Updated: 2019/12/28 08:27:34 by edal--ce         ###   ########.fr        #
+#    Updated: 2020/02/26 01:53:22 by edal--ce         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-CFLAGS = -Wall -Wextra -Werror 
+CFLAGS = -O3 -Wall -Werror -Wextra -g3 -flto -march=native
 
 NAME = libft.a
 	
@@ -51,16 +51,20 @@ SRCS = 	src/ft_split.c 				\
 		src/ft_strtrim.c 			\
 		src/ft_convert_base.c 		\
 		src/ft_convert_base2.c 		\
-		src/ft_abs.c
+		src/ft_abs.c 				\
+		src/ft_isspace.c 			\
+		src/get_next_line.c 		\
+		src/ft_pos_c_str.c
 
-BNSSRC = 	src/ft_lstnew.c \
-			src/ft_lstadd_front.c \
-			src/ft_lstsize.c \
-			src/ft_lstclear.c\
-			src/ft_lstlast.c \
-			src/ft_lstadd_back.c \
-			src/ft_lstdelone.c \
-			src/ft_lstmap.c\
+
+BNSSRC = 	src/ft_lstnew.c 		\
+			src/ft_lstadd_front.c 	\
+			src/ft_lstsize.c 		\
+			src/ft_lstclear.c 		\
+			src/ft_lstlast.c 		\
+			src/ft_lstadd_back.c 	\
+			src/ft_lstdelone.c 		\
+			src/ft_lstmap.c 		\
 			src/ft_lstiter.c
 
 

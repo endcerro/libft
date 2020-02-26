@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 21:19:21 by edal--ce          #+#    #+#             */
-/*   Updated: 2020/02/26 02:06:14 by edal--ce         ###   ########.fr       */
+/*   Created: 2020/02/26 01:50:38 by edal--ce          #+#    #+#             */
+/*   Updated: 2020/02/26 02:08:31 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_abs(int val)
-{
-	if (val < 0)
-		val *= -1;
-	return (val);
-}
+#include "../libft.h"
 
-double	ft_abs_double(double val)
+int		ft_isspace(char in)
 {
-	if (val < 0)
-		val *= -1;
-	return (val);
+	if (in == ' ' || in == '	' || in == '\n' || in == '\t' ||
+		in == '\v' || in == '\f' || in == '\r')
+		return (1);
+	return (0);
 }

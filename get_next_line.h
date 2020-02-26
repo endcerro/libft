@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abs.c                                           :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 21:19:21 by edal--ce          #+#    #+#             */
-/*   Updated: 2020/02/26 02:06:14 by edal--ce         ###   ########.fr       */
+/*   Created: 2019/11/23 16:04:58 by edal--ce          #+#    #+#             */
+/*   Updated: 2020/02/26 02:07:26 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_abs(int val)
-{
-	if (val < 0)
-		val *= -1;
-	return (val);
-}
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-double	ft_abs_double(double val)
-{
-	if (val < 0)
-		val *= -1;
-	return (val);
-}
+# include <stdlib.h>
+
+# include <unistd.h>
+
+int		get_next_line(int fd, char **line);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:43:55 by edal--ce          #+#    #+#             */
-/*   Updated: 2019/12/28 08:18:36 by edal--ce         ###   ########.fr       */
+/*   Updated: 2020/02/26 02:13:07 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,14 @@ void				ft_putstr_fd(char *s, int fd);
 char				**ft_split(char const *str, char sep);
 char				*ft_strchr(const char *str, int c);
 char				*ft_strdup(char *s1);
+int					ft_isspace(char in);
 char				*ft_strjoin(char const *s1, char const *s2);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 size_t				ft_strlcpy(char *dest, const char *src, size_t size);
 size_t				ft_strlen(const char *str);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
+int					ft_strcmp(char *s1, char *s2);
 char				*ft_strnstr(const char *lin, const char *tl, size_t n);
 char				*ft_strrchr(const char *str, int c);
 char				*ft_strtrim(char const *s1, char const *set);
@@ -75,4 +77,7 @@ int					mchb_strl(char nb, char *base);
 void				ft_addto(char *st, unsigned long *nb, char c);
 int					ft_abs(int val);
 unsigned char		*ft_itoua(int n);
+int					get_next_line(int fd, char **line);
+int					ft_pos_c_str(char *str, char c);
+
 #endif
