@@ -6,7 +6,7 @@
 /*   By: edal--ce <edal--ce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 15:51:08 by edal--ce          #+#    #+#             */
-/*   Updated: 2019/12/28 08:18:14 by edal--ce         ###   ########.fr       */
+/*   Updated: 2023/07/19 17:14:24 by edal--ce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
+	int ret;
 	if (s && fd != -1)
-		write(fd, s, ft_strlen((const char*)s));
+		ret = write(fd, s, ft_strlen((const char*)s));
+	(void) ret;
 }
