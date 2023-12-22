@@ -54,7 +54,8 @@ SRCS = 	src/ft_split.c 				\
 		src/ft_abs.c 				\
 		src/ft_isspace.c 			\
 		src/get_next_line.c 		\
-		src/ft_pos_c_str.c
+		src/ft_pos_c_str.c			\
+		src/ft_hexdump.c			\
 
 
 BNSSRC = 	src/ft_lstnew.c 		\

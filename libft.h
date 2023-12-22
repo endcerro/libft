@@ -79,5 +79,5 @@ int					ft_abs(int val);
 unsigned char		*ft_itoua(int n);
 int					get_next_line(int fd, char **line);
 int					ft_pos_c_str(char *str, char c);
-
+void ft_hexdump (const void * addr, const int len, int before_space);
 #endif
